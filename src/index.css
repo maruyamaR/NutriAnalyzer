@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for rich, modern design */
+@layer base {
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  p {
+    line-height: 1.7;
+  }
+}
+
+@layer utilities {
+  /* Enhanced transitions */
+  .transition-colors {
+    transition-property: color, background-color, border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+  
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  /* Enhanced shadows with multiple layers */
+  .shadow-sm {
+    box-shadow: 
+      0 1px 2px 0 rgb(0 0 0 / 0.05),
+      0 1px 3px 0 rgb(0 0 0 / 0.1);
+  }
+  
+  .shadow {
+    box-shadow: 
+      0 1px 3px 0 rgb(0 0 0 / 0.1), 
+      0 1px 2px -1px rgb(0 0 0 / 0.1),
+      0 4px 6px -1px rgb(0 0 0 / 0.05);
+  }
+  
+  .shadow-md {
+    box-shadow: 
+      0 4px 6px -1px rgb(0 0 0 / 0.1), 
+      0 2px 4px -2px rgb(0 0 0 / 0.1),
+      0 8px 13px -3px rgb(0 0 0 / 0.07);
+  }
+  
+  .shadow-lg {
+    box-shadow: 
+      0 10px 15px -3px rgb(0 0 0 / 0.1), 
+      0 4px 6px -4px rgb(0 0 0 / 0.1),
+      0 20px 25px -5px rgb(0 0 0 / 0.1);
+  }
+  
+  .shadow-xl {
+    box-shadow: 
+      0 20px 25px -5px rgb(0 0 0 / 0.1), 
+      0 8px 10px -6px rgb(0 0 0 / 0.1),
+      0 35px 60px -12px rgb(0 0 0 / 0.25);
+  }
+  
+  .shadow-2xl {
+    box-shadow: 
+      0 25px 50px -12px rgb(0 0 0 / 0.25),
+      0 50px 100px -20px rgb(0 0 0 / 0.25);
+  }
+  
+  /* Backdrop blur utilities */
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+  }
+  
+  .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+  }
+  
+  /* Custom gradient backgrounds */
+  .bg-gradient-radial {
+    background: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+  }
+  
+  /* Image hover effects */
+  .image-hover-scale {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .image-hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Button hover effects */
+  .btn-hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .btn-hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+  
+  /* Card hover effects */
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  }
+}
+
+/* Enhanced focus styles */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: 
+    0 0 0 3px rgb(16 185 129 / 0.1),
+    0 1px 3px 0 rgb(0 0 0 / 0.1);
+  border-color: rgb(16 185 129);
+}
+
+/* Enhanced button interactions */
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  transform: none;
+  cursor: not-allowed;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #10b981, #0d9488);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #059669, #0f766e);
+}
+
+/* Loading animations */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #10b981, #0d9488);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Image overlay effects */
+.image-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(16, 185, 129, 0.1), rgba(13, 148, 136, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-overlay:hover::after {
+  opacity: 1;
+}
+
+/* Typography enhancements */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Responsive image utilities */
+.img-responsive {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
